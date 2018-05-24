@@ -1,0 +1,121 @@
+<!-- This is an HTML document.  Please make sure the filename has either
+     an .htm or .html extension, and view this file in a web browser. -->
+
+<HTML>
+<HEAD>
+<TITLE>Gene Set Class Comparison Results</TITLE>
+<STYLE>
+P {font-size: 9pt}
+TABLE {font-size: 9pt}
+</STYLE>
+<script src='file:///C:/Program Files (x86)/ArrayTools/Misc/sorttable.js'></script>
+</HEAD>
+<BODY>
+<SCRIPT>
+function popUp(text) {
+   var prop =
+   "location=no,scrollbars=yes,menubars=no,toolbars=no,resizable=yes";
+   popup = window.open("","mywin",prop);
+   popup.document.open();
+   popup.document.write(text);
+   popup.document.close();
+   popup.focus();
+   }
+   </SCRIPT>
+<A HREF= "file:///C:/Program Files (x86)/ArrayTools/Doc/HTML/GeneSetClassComparison_Results.html" TARGET=_blank>HELP </A>
+<P><B><U>Description of the problem:</U></B></P>
+<P>
+Number of classes: 2 
+<BR>Column of the Experiment Descriptors sheet that defines class variable: BRCA1 V BRCA2
+<BR>
+Number of genes used for random variance estimation: 3226 <BR>
+Number of genes that passed filtering criteria: 2009
+<BR>
+Type of Gene Sets: Kegg  Pathway
+<BR>
+Number of total investigated Gene Sets: 165
+<BR>
+Type of univariate test used:  Two-sample T-test
+<BR>Random variance model was used.
+<BR>
+<BR>
+Tests used to find significant gene sets are: LS/KS permutation test, Efron-Tibshirani's GSA maxmean test
+<BR>
+The threshold of determining significant gene sets is 0.005
+<BR>
+LS/KS permutation test finds gene sets which have more genes differentially expressed  among the phenotype classes  than expected by chance.
+<BR>
+Efron-Tibshirani's test uses 'maxmean' statistics to identify gene sets differentially expressed.<BR>
+
+
+ 
+<HR SIZE=5 WIDTH="100%" NOSHADE>
+<P><B>Summary of Results:</B> <BR><BR> 15  out of  165  investigated gene sets passed the  0.005  significance threshold  <BR> LS/KS permutation test found 15 significant gene sets. <BR> Efron-Tibshirani's maxmean test found 3 significant gene sets (under 200 permutations). <BR>   </P><HR SIZE=5 WIDTH="100%" NOSHADE>
+<P><U>Table</U> - Table of Gene Sets: 
+15
+ gene sets sorted by LS permutation p-value (significant p-values are in red)
+<BR>To access the list of genes within each gene set, click the hyperlinked number of genes for each gene set.
+</P>
+class 1:BRCA1 (7 samples), class 2:BRCA2 (8 samples)
+<P>Color Coded KEGG Pathway Graphs <A HREF="file:///C:/Program Files (x86)/ArrayTools/Doc/HTML/ColorCodeKEGG.html">Legend</A></P>
+<table border='1' class='sortable'>
+<CAPTION ALIGN=left>
+
+</CAPTION>
+<TR><TH>&nbsp;<TH> Kegg Pathway<TH>Pathway description<TH>Color Coded KEGG Pathway Graphs<TH>Number of <NOBR>genes</NOBR><TH>Heatmap link<TH>LS permutation <NOBR>p-value</NOBR><TH>KS permutation <NOBR>p-value</NOBR><TH>Efron-Tibshirani's GSA test <NOBR>p-value</NORB>
+<TR><TD> 1<TD>hsa04110<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa04110">Cell cycle</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa04110&multi_query=890+%23D74B4B,/1019+%23D74B4B,/4176+%23D74B4B,/1031+%23D74B4B,/5111+%23D74B4B,/1111+%23D74B4B,/4609+%23D74B4B,/4085+%23D74B4B,/1871+%23D74B4B,/3066+%23D74B4B,/4609+%23D74B4B,/595+%233399CC,/894+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa04110">40</a><TD><a href="heatmap/geneset1.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00001 </font><TD><font color="red"> 0.00024 </font><TD><font color="red"> < 0.005 (-) </font>
+<TR><TD> 2<TD>hsa05213<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa05213">Endometrial cancer</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa05213&multi_query=1499+%23D74B4B,/4609+%23D74B4B,/4609+%23D74B4B,/595+%233399CC,/2064+%233399CC,/2064+%233399CC,/2064+%233399CC,/1495+%233399CC,/1495+%233399CC,/2885+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa05213">24</a><TD><a href="heatmap/geneset2.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00001 </font><TD><font color="red"> 0.00082 </font><TD>0.01 (+)
+<TR><TD> 3<TD>hsa05219<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa05219">Bladder cancer</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa05219&multi_query=1019+%23D74B4B,/4609+%23D74B4B,/1871+%23D74B4B,/4609+%23D74B4B,/595+%233399CC,/2064+%233399CC,/2064+%233399CC,/2064+%233399CC,/7057+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa05219">19</a><TD><a href="heatmap/geneset3.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00001 </font><TD><font color="red"> 0.00274 </font><TD>0.025 (-)
+<TR><TD> 4<TD>hsa05223<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa05223">Non-small cell lung cancer</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa05223&multi_query=1019+%23D74B4B,/1871+%23D74B4B,/595+%233399CC,/2064+%233399CC,/2064+%233399CC,/2064+%233399CC,/2885+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa05223">19</a><TD><a href="heatmap/geneset4.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00005 </font><TD>0.01969<TD><font color="red"> 0.005 (+) </font>
+<TR><TD> 5<TD>hsa00052<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa00052">Galactose metabolism</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa00052&multi_query=5214+%23D74B4B,/5214+%23D74B4B,/5214+%23D74B4B,/2582+%23D74B4B,">View</A><TD><a href="GeneSetGenesTable1.html#hsa00052">6</a><TD><a href="heatmap/geneset5.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00034 </font><TD><font color="red"> 0.00214 </font><TD>0.01 (-)
+<TR><TD> 6<TD>hsa05222<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa05222">Small cell lung cancer</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa05222&multi_query=1019+%23D74B4B,/1163+%23D74B4B,/4609+%23D74B4B,/1871+%23D74B4B,/4609+%23D74B4B,/329+%23D74B4B,/595+%233399CC,/3675+%233399CC,/2335+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa05222">32</a><TD><a href="heatmap/geneset6.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00049 </font><TD><font color="red"> 0.00027 </font><TD><font color="red"> 0.005 (-) </font>
+<TR><TD> 7<TD>hsa04115<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa04115">p53 signaling pathway</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa04115&multi_query=1019+%23D74B4B,/1111+%23D74B4B,/595+%233399CC,/5054+%233399CC,/7057+%233399CC,/1643+%233399CC,/894+%233399CC,/7249+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa04115">22</a><TD><a href="heatmap/geneset7.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.0005 </font><TD>0.03193<TD>0.025 (+)
+<TR><TD> 8<TD>hsa00030<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa00030">Pentose phosphate pathway</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa00030&multi_query=5214+%23D74B4B,/5214+%23D74B4B,/5214+%23D74B4B,/51071+%23D74B4B,">View</A><TD><a href="GeneSetGenesTable1.html#hsa00030">8</a><TD><a href="heatmap/geneset8.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00052 </font><TD>0.03609<TD>0.015 (-)
+<TR><TD> 9<TD>hsa04510<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa04510">Focal adhesion</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa04510&multi_query=5500+%23D74B4B,/5500+%23D74B4B,/3696+%23D74B4B,/3696+%23D74B4B,/1499+%23D74B4B,/329+%23D74B4B,/595+%233399CC,/2064+%233399CC,/10451+%233399CC,/3693+%233399CC,/2064+%233399CC,/2064+%233399CC,/5829+%233399CC,/2885+%233399CC,/3675+%233399CC,/7057+%233399CC,/2335+%233399CC,/894+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa04510">72</a><TD><a href="heatmap/geneset9.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.001 </font><TD>0.25409<TD>0.135 (+)
+<TR><TD> 10<TD>hsa04810<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa04810">Regulation of actin cytoskeleton</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa04810&multi_query=5500+%23D74B4B,/5500+%23D74B4B,/3696+%23D74B4B,/3696+%23D74B4B,/4478+%23D74B4B,/6548+%233399CC,/10451+%233399CC,/3693+%233399CC,/2264+%233399CC,/5829+%233399CC,/3675+%233399CC,/2335+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa04810">54</a><TD><a href="heatmap/geneset10.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00259 </font><TD>0.10683<TD>0.145 (+)
+<TR><TD> 11<TD>hsa05215<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa05215">Prostate cancer</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa05215&multi_query=1499+%23D74B4B,/1871+%23D74B4B,/2950+%23D74B4B,/595+%233399CC,/2064+%233399CC,/2064+%233399CC,/2064+%233399CC,/2885+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa05215">32</a><TD><a href="heatmap/geneset11.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00349 </font><TD>0.06409<TD>0.05 (+)
+<TR><TD> 12<TD>hsa04520<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa04520">Adherens junction</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa04520&multi_query=7525+%23D74B4B,/1499+%23D74B4B,/7525+%23D74B4B,/2064+%233399CC,/2064+%233399CC,/2064+%233399CC,/1495+%233399CC,/1495+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa04520">28</a><TD><a href="heatmap/geneset12.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00393 </font><TD>0.08933<TD>0.155 (+)
+<TR><TD> 13<TD>hsa05212<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa05212">Pancreatic cancer</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa05212&multi_query=1019+%23D74B4B,/1871+%23D74B4B,/595+%233399CC,/2064+%233399CC,/2064+%233399CC,/2064+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa05212">29</a><TD><a href="heatmap/geneset13.html" TARGET=_blank>heatmap</a><TD><font color="red"> 0.00486 </font><TD>0.15591<TD>0.02 (+)
+<TR><TD> 14<TD>hsa04142<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa04142">Lysosome</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa04142&multi_query=1213+%233399CC,/967+%233399CC,/537+%233399CC,/537+%233399CC,/2799+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa04142">34</a><TD><a href="heatmap/geneset14.html" TARGET=_blank>heatmap</a><TD>0.00947<TD><font color="red"> 0.00362 </font><TD>0.025 (+)
+<TR><TD> 15<TD>hsa03030<TD><A HREF="http://www.kegg.jp/kegg-bin/show_pathway?hsa03030">DNA replication</A><TD><A href="http://www.kegg.jp/kegg-bin/show_pathway?map=hsa03030&multi_query=4176+%23D74B4B,/5111+%23D74B4B,/6119+%23D74B4B,/57804+%233399CC,">View</A><TD><a href="GeneSetGenesTable1.html#hsa03030">15</a><TD><a href="heatmap/geneset15.html" TARGET=_blank>heatmap</a><TD>0.01017<TD><font color="red"> 0.00359 </font><TD>0.015 (-)
+</TABLE>
+<HR SIZE=5 WIDTH="100%" NOSHADE>
+<P>Links to the genes within gene sets:<BR>
+
+<a href="GeneSetGenesTable1.html">Gene Sets 1 - 15</a>
+</P>
+<HR SIZE=5 WIDTH="100%" NOSHADE>
+<H3><a name="Filtering"><B><U>Filtering parameters:</U></B></a></H3>
+R version 3.4.3 (2017-11-30)
+<BR>
+Name of the project file: BRCA.xls
+<BR>
+Time of the analysis: Wed May 23 12:18:52 2018
+<BR>
+BRB-ArrayTools Version: 4.6.0 - Beta_2 (January 2018)
+<BR>
+Project annotated by SOURCE (source.stanford.edu), searched by gene identifier: CloneID, on 9/13/2012 3:41:45 PM
+<BR>
+</B><BR>
+<LI><B>Apply Background adjustment: OFF
+</LI></B><BR>
+<BR><LI><B>Spot Filters: OFF </LI>
+</B><BR>
+<BR><LI><B>Average the replicate spots within an array: OFF
+</LI></B><BR>
+<BR><LI><B>Use a common reference design: OFF</LI></B><BR></UL><P><LI><B>
+Normalization: 
+</LI></B><BR>
+Normalize (center) each array
+using median over entire array.
+<BR>
+</LI><P><LI><B>Exclude a gene under any of the following conditions:</B>
+<BR>
+Less than 20 % of expression data have at least a 1.5 -fold change in either direction from gene's median value
+<BR>
+Percent of data missing or filtered out exceeds 50 %
+<BR>
+ 
+<BR><LI><B>Gene Subsets: OFF
+</B></LI></P>
+</body></html>
