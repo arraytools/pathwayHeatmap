@@ -1,8 +1,8 @@
 The purpose of this document is to show the correlation matrix of pathway genes from real data. The correlation is displayed as heatmaps. Genes are ordered by hierarchical clustering using pearson correlation distance and complete linkage (default in hclust).
 
-*  BRCA data from BRB-ArrayTools built-in dataset
-*  Run KEGG pathway analysis BRCA1 vs BRCA2
-*  15 KEGG pathways were found using the default options.
+*  BRCA data from [BRB-ArrayTools](https://brb.nci.nih.gov/BRB-ArrayTools/) built-in dataset
+*  Run KEGG pathway analysis BRCA1 vs BRCA2 using the default options
+*  15 KEGG pathways were found
 
 Output
 
