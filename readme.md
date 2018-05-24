@@ -8,7 +8,8 @@ Output
 
 *  PathwayClassComparison folder - BRB-ArrayTools Output
 *  15 svg files - heatmap of correlation matrix of 15 pathways
-*  1 svg file - heatmap of cor matrix from combining the 1st and 2nd pathways
+*  [1 svg file](hsa04110_hsa05213.svg) - heatmap of cor matrix from combining the 1st and 2nd pathways
+*  [1 svg file](hsa04110_hsa05213_hsa05219_hsa05223.svg) - heatmap of cor matrix from combining 4 pathways (102 genes)
 
 ```R
 # x <- read.delim("clipboard", as.is=T)
