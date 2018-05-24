@@ -65,7 +65,7 @@ dev.off()
 ```
 
 Combine 4 gene sets
-```{R}
+```R
 ind <- vector("list", 4)
 ord <- vector("list", 4)
 for(i in 1:4) {
