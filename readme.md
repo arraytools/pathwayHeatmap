@@ -7,7 +7,8 @@ The purpose of this document is to show the correlation matrix of pathway genes 
 Output
 
 *  PathwayClassComparison folder - BRB-ArrayTools Output
-*  15 HTML files - interactive heatmap of correlation matrix of 15 pathways
+*  15 svg files - heatmap of correlation matrix of 15 pathways
+*  1 svg file - heatmap of cor matrix from combining the 1st and 2nd pathways
 
 ```R
 # x <- read.delim("clipboard", as.is=T)
@@ -18,8 +19,12 @@ Output
 # names(pathwayid) <- scan("clipboard", "")
 # dump("pathwayid", file = "pathwayid.Rdmped")
 
+library("ComplexHeatmap")
+# I can add a color bar at the top of the heatmap (cf heatmaply and gplots)
+# I can control the clustering
+# Better use of space compared to gplots::heatmap.2()
+
 source("pathwayid.Rdmped")
-library(heatmaply)
 # expdesign <- read.delim("EXPDESIGN.txt", as.is = TRUE)
 geneid <- read.delim("GENEID.txt", as.is = TRUE)
 lograt <- read.delim("LOGRAT.txt", as.is = TRUE, header = FALSE)
@@ -27,12 +32,32 @@ for(i in seq_along(pathwayid)) {
   ind <- match(pathwayid[[i]], geneid[, 1])
   mcor <- cor(t(lograt[ind, ]))
   colnames(mcor) <- rownames(mcor) <- pathwayid[[i]]
-  heatmaply(mcor, margins = c(60, 80, 40, 0),
-            k_col = 1, k_row = 1,
-            colors = BrBG,
-            limits = c(-1,1),
-            distfun = "pearson",
-      main = paste0(names(pathwayid)[i], " (g=", length(pathwayid[[i]]), ")"),
-      file = paste0(names(pathwayid)[i], ".html"))
+  ord <- hclust(as.dist(1-cor(mcor)))$order
+  svg(paste0(names(pathwayid)[i], ".svg"))
+  Heatmap( mcor[ord, ord], cluster_rows = FALSE, cluster_columns = FALSE,
+     row_names_gp = gpar(fontsize = 6),
+     column_names_gp = gpar(fontsize = 6),
+     column_title = paste0(names(pathwayid)[i], " (g=", length(pathwayid[[i]]), ")"), name = "value")  
+  dev.off()
 }
+
+# Put two gene sets together to understand inter-geneset correlation
+i <- 1
+ind1 <- match(pathwayid[[i]], geneid[, 1])
+mcor <- cor(t(lograt[ind1, ]))
+ord1 <- hclust(as.dist(1-cor(mcor)))$order
+i <- 2
+ind2 <- match(pathwayid[[i]], geneid[, 1])
+mcor <- cor(t(lograt[ind2, ]))
+ord2 <- hclust(as.dist(1-cor(mcor)))$order
+
+mcor <- cor(t(lograt[c(ind1[ord1], ind2[ord2]), ]))
+colnames(mcor) <- rownames(mcor) <- c(pathwayid[[1]][ord1], pathwayid[[2]][ord2])
+
+ha_column = HeatmapAnnotation(df = data.frame(KEGG = c(rep("hsa04110", 40), rep("hsa05213", 24))),
+    col = list(KEGG = c("hsa04110" =  "seagreen", "hsa05213" = "darkorange")))
+ht1 <- Heatmap( mcor, cluster_rows = FALSE, cluster_columns = FALSE, name = "value", top_annotation = ha_column, row_names_gp = gpar(fontsize = 6), column_names_gp = gpar(fontsize = 6))
+svg("twosets.svg")
+draw(ht1, annotation_legend_side = "bottom")
+dev.off()
 ```
