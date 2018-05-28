@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+  .w3-modal {
+    padding-top: 3em;
+  }
+
+  .w3-modal-content {
+    width: fit-content;
+  }
+
+  .imgS {
+    max-width: 12em;
+    float: left;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="w3-container">
+  <h2>Heatmap Image Gallery</h2>
+  <p>Instruction: click on the images to display them in full size.</p>
+</div>
+
+<div class="w3-row-padding">
+  <div class="w3-container imgS">
+    <img src="hsa04110.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa05213.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa05219.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa05223.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa00052.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div style="clear: both;">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa05222.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa04115.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa00030.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa04510.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa04810.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div style="clear: both;">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa05215.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa04520.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa05212.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa04142.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa03030.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+  <div style="clear: both;">
+  </div>
+
+  <div class="w3-container imgS">
+    <img src="hsa04110_hsa05213.svg" style="width:100%;cursor:pointer"
+    onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+</div>
+
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img01" style="weight:100%">
+  </div>
+</div>
+
+<script>
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+<!--
+https://www.w3schools.com/w3css/w3css_modal.asp
+https://www.w3schools.com/howto/howto_js_lightbox.asp
+https://www.w3schools.com/css/css3_images.asp
+http://www.menucool.com/slider/show-image-gallery-on-modal-popup
+http://dimsemenov.com/plugins/magnific-popup/
+ -->
