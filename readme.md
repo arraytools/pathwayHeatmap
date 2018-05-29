@@ -59,9 +59,11 @@ colnames(mcor) <- rownames(mcor) <- c(pathwayid[[1]][ord1], pathwayid[[2]][ord2]
 
 ha_column = HeatmapAnnotation(df = data.frame(KEGG = c(rep("hsa04110", 40), rep("hsa05213", 24))),
     col = list(KEGG = c("hsa04110" =  "seagreen", "hsa05213" = "darkorange")))
+ha_row = rowAnnotation(df = data.frame(KEGG = c(rep("hsa04110", 40), rep("hsa05213", 24))),
+    col = list(KEGG = c("hsa04110" =  "seagreen", "hsa05213" = "darkorange")))
 ht1 <- Heatmap( mcor, cluster_rows = FALSE, cluster_columns = FALSE, name = "value", top_annotation = ha_column, row_names_gp = gpar(fontsize = 6), column_names_gp = gpar(fontsize = 6))
 svg("hsa04110_hsa05213.svg")
-draw(ht1, annotation_legend_side = "bottom")
+draw(ha_row + ht1, show_annotation_legend = F)
 dev.off()
 ```
 
@@ -78,14 +80,35 @@ for(i in 1:4) {
 mcor <- cor(t(lograt[unlist(mapply(function(x,y) x[y], ind, ord)), ]))
 colnames(mcor) <- rownames(mcor) <- unlist(mapply(function(x, y) x[y], pathwayid[1:4], ord))
 
+# https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf#page=4
+# http://colorbrewer2.org/#type=qualitative&scheme=Set1&n=4
+# sapply(brewer.pal(4, "Set1"), color.id) to obtain the color names
 ha_column = HeatmapAnnotation(df = data.frame(KEGG = rep(names(pathwayid[1:4]), sapply(pathwayid[1:4], length))),
-    col = list(KEGG = c("hsa04110" =  "seagreen", "hsa05213" = "darkorange", "hsa05219" = "yellow", "hsa05223" = "pink")))
+    col = list(KEGG = c("hsa04110" =  "firebrick2", "hsa05213" = "steelblue", "hsa05219" = "palegreen4", "hsa05223" = "orchid4")))
+ha_row = rowAnnotation(df = data.frame(KEGG = rep(names(pathwayid[1:4]), sapply(pathwayid[1:4], length))),
+    col = list(KEGG = c("hsa04110" =  "firebrick2", "hsa05213" = "steelblue", "hsa05219" = "palegreen4", "hsa05223" = "orchid4")))
 ht1 <- Heatmap(mcor, cluster_rows = FALSE, cluster_columns = FALSE,
                name = "value",
                top_annotation = ha_column,
                row_names_gp = gpar(fontsize = 3),
-               column_names_gp = gpar(fontsize = 3))
+               column_names_gp = gpar(fontsize = 3))               
 svg("hsa04110_hsa05213_hsa05219_hsa05223.svg")
+draw(ha_row + ht1, show_annotation_legend = F)
+dev.off()
+```
+
+AR(1)
+```R
+rho <- .8
+p <- 30
+mcor <- rho ^ abs(matrix(1:p, p, p, byrow=T) - matrix(1:p, p, p))
+colnames(mcor) <- rownames(mcor) <- 1:p
+ht1 <- Heatmap(mcor, cluster_rows = FALSE, cluster_columns = FALSE,
+               name = "value",
+               col = circlize::colorRamp2(c(0, 1), c("white", "red")),
+               row_names_gp = gpar(fontsize = 10),
+               column_names_gp = gpar(fontsize = 10))
+svg("ar1.svg")
 draw(ht1, annotation_legend_side = "bottom")
 dev.off()
 ```
