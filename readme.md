@@ -33,9 +33,11 @@ for(i in seq_along(pathwayid)) {
   ind <- match(pathwayid[[i]], geneid[, 1])
   mcor <- cor(t(lograt[ind, ]))
   colnames(mcor) <- rownames(mcor) <- pathwayid[[i]]
-  ord <- hclust(as.dist(1-mcor))$order
+  # ord <- hclust(as.dist(1-mcor))$order
   svg(paste0(names(pathwayid)[i], ".svg"))
-  Heatmap( mcor[ord, ord], cluster_rows = FALSE, cluster_columns = FALSE,
+  mydend <- as.dendrogram(hclust(as.dist(1-mcor)))
+  Heatmap( mcor, cluster_columns = mydend, cluster_rows = mydend,
+     row_dend_reorder = FALSE, column_dend_reorder = FALSE,
      row_names_gp = gpar(fontsize = 6),
      column_names_gp = gpar(fontsize = 6),
      column_title = paste0(names(pathwayid)[i], " (g=", length(pathwayid[[i]]), ")"), name = "value")  
@@ -109,6 +111,19 @@ ht1 <- Heatmap(mcor, cluster_rows = FALSE, cluster_columns = FALSE,
                row_names_gp = gpar(fontsize = 10),
                column_names_gp = gpar(fontsize = 10))
 svg("ar1.svg")
+draw(ht1, annotation_legend_side = "bottom")
+dev.off()
+
+rho <- -.8
+p <- 30
+mcor <- rho ^ abs(matrix(1:p, p, p, byrow=T) - matrix(1:p, p, p))
+colnames(mcor) <- rownames(mcor) <- 1:p
+ht1 <- Heatmap(mcor, cluster_rows = FALSE, cluster_columns = FALSE,
+               name = "value",
+               col = circlize::colorRamp2(c(-1, 0, 1), c("blue", "white", "red")),
+               row_names_gp = gpar(fontsize = 10),
+               column_names_gp = gpar(fontsize = 10))
+svg("ar1b.svg")
 draw(ht1, annotation_legend_side = "bottom")
 dev.off()
 ```
